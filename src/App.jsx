@@ -3,8 +3,8 @@ import './App.css';
 import ProductList from './ProductList';
 import AddProductForm from './AddProductForm';
 
-const App = () => {
-  const [products] = useState([
+
+  const products =[
     {
       id: 1,
       name: 'Riddell Axiom',
@@ -23,14 +23,16 @@ const App = () => {
       price: 499.99,
       description: 'Not only does the Schutt F7 Collegiate Football Helmet excel in safety, but it also prioritizes player comfort.',
     },
-  ]);
-  return (
-    <div>
-      <h1>Helmet Description App</h1>
-      <ProductList products={products} />
-      <AddProductForm />
-      <h3>Hello</h3>
-    </div>
-  );
-};
-export default App;
+  ];
+  function App() {
+    const [products, setProducts] = useState(products)
+    const handleAddProduct = (newProduct) => {
+      setProducts([...products, newProduct])
+    };  
+ return (
+    <>
+      <ProductList products={products}/>
+      <br/>
+      <AddProductForm onAddProduct={handleAddProduct}/>
+    </> )}
+  export default App
