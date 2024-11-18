@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import './App.css';
-import ProductList from './ProductList';
-import AddProductForm from './AddProductForm';
+import { useState } from 'react'
+import { ProductList } from './components/ProductList.jsx'
+import { AddProductForm } from './components/AddProductForm.jsx'
+import './App.css'
 
 
   const products =[
